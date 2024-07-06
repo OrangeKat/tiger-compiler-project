@@ -1,0 +1,25 @@
+let
+  class A
+  {
+      var a := 1
+      method k(b : int) : int = b
+      method toto(b : int) : int = self.a + b
+  }
+
+  class B extends A
+  {
+      var c : string := "salut"
+      method k(b : int) : int = b + 2
+      method t(b : int) : int = (print(self.c); self.a)
+  }
+
+  var a : A := new A
+  var b : B := new B
+in
+  a.k(1) + b.k(4);
+  b.t(1);
+  b.toto(2);
+  a.a;
+  b.c;
+  b.a
+end
